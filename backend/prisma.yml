@@ -1,0 +1,10 @@
+#endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: https://feinwort-production-a67846f774.herokuapp.com/feinwort-prisma/prod
+endpoint: https://feinwort-production-8dd8f3868e.herokuapp.com/feinwort-prod/prod
+datamodel: datamodel.graphql
+secret: ${env:PRISMA_SECRET}
+hooks:
+  post-deploy:
+    - graphql get-schema -p prisma
+
+#ok
